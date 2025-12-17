@@ -5,7 +5,7 @@ const cors = require('cors'); // <-- 1. Importar la librería CORS
 // Importar los archivos de rutas
 const sucursalesRoutes = require('./routes/sucursales.routes');
 const existenciasRoutes = require('./routes/existencias.routes');
-
+const ventasRoutes = require('./routes/ventas.route');
 const app = express();
 const PORT = 3000;
 
@@ -26,6 +26,7 @@ app.use('/api/sucursales', sucursalesRoutes);
 // Montar el router de Existencias en la ruta base /api/existencias
 app.use('/api/existencias', existenciasRoutes);
 
+app.use('/api/ventas', ventasRoutes);
 
 // Inicio del servidor
 app.listen(PORT, () => {
